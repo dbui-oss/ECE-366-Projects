@@ -1,0 +1,68 @@
+# ==============================================================================
+# Course:     ECE 366 - Computer Organization (Fall 2026)
+# Assignment: Project 2 - Progress Report 1: Fibonacci(n)
+# Description: Computes the n-th Fibonacci number iteratively as specified in
+#              Figure 1. The input 'n' is loaded from memory, and the computed
+#              result is written back to memory.
+# ==============================================================================
+
+.data
+    .align 2
+n:          .word 9         # Test input n (change value here to test different n)
+result:     .word 0         # Memory location where the n-th Fibonacci number is stored
+
+.text
+.globl main
+
+main:
+    # 1. Load input n from memory into register $a0
+    la      $t0, n
+    lw      $a0, 0($t0)
+
+    # 2. Call fibonacci function
+    jal     fibonacci
+
+    # 3. Store returned result ($v0) into memory location 'result'
+    la      $t1, result
+    sw      $v0, 0($t1)
+
+    # 4. Terminate execution cleanly
+    li      $v0, 10
+    syscall
+
+# ------------------------------------------------------------------------------
+# Function: fibonacci
+# Input:    $a0 = n (nonnegative integer)
+# Output:   $v0 = n-th Fibonacci number
+# ------------------------------------------------------------------------------
+fibonacci:
+    # Base case check: if n <= 1, return n
+    li      $t2, 1
+    ble     $a0, $t2, base_case
+
+    # Iterative initialization (Figure 1)
+    li      $t3, 0          # a = 0
+    li      $t4, 1          # b = 1
+    addi    $t5, $a0, -1    # loop limit: range(n - 1)
+    li      $t6, 0          # loop index: i = 0
+
+loop:
+    # Check loop condition: if i >= (n - 1), exit loop
+    bge     $t6, $t5, done
+
+    # Loop body
+    move    $t7, $t4        # temp = b
+    add     $t4, $t3, $t4   # b = a + b
+    move    $t3, $t7        # a = temp
+
+    # Increment loop counter
+    addi    $t6, $t6, 1
+    j       loop
+
+base_case:
+    move    $v0, $a0        # return n
+    jr      $ra
+
+done:
+    move    $v0, $t4        # return b
+    jr      $ra
