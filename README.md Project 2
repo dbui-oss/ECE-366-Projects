@@ -1,0 +1,26 @@
+# ECE 366: Computer Organization — Project 2 (Progress Report 1)
+
+## Team Information
+- **Member 1:** Martinez, Jose — NetID:672018658 
+- **Member 2:** Bui, Duong Minh Nhat — NetID: 
+
+## GitHub Repository
+- **URL:** 
+
+## Member Contributions
+- **Jose Martinez:** Designed the core iterative loop logic in MIPS assembly, managed the Git repository setup, and tested edge cases ($n = 0, 1$).
+- **Bui, Duong Minh Nhat** Implemented memory loading (`n`) and storing (`result`), verified calling conventions, and handled base case branching.
+
+## How to Run the Program in MARS
+
+1. **Launch MARS:** Open the MARS MIPS simulator jar file (`java -jar Mars.jar`).
+2. **Open the File:** Go to `File` -> `Open` and select `fibonacci.asm`.
+3. **Set Input `n`:**
+   - In the `.data` segment of `fibonacci.asm`, update the line `n: .word <value>` with the desired nonnegative integer (e.g., `9`).
+4. **Assemble:** Click `Run` -> `Assemble` (or press `F3`).
+5. **Execute:** Click `Run` -> `Go` (or press `F5`).
+6. **Verify Output:**
+   - Open the **Data Segment** pane at the bottom of the simulator.
+   - Inspect the first memory word at the base address (`0x10010000`), which holds `n`.
+   - Inspect the second word (`0x10010004`), which holds `result`.
+   - Alternatively, inspect register `$v0` in the **Registers** pane upon completion.
