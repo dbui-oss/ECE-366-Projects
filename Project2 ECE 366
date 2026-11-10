@@ -1,10 +1,8 @@
-# ==============================================================================
 # Course:     ECE 366 - Computer Organization (Fall 2026)
 # Assignment: Project 2 - Progress Report 1: Fibonacci(n)
 # Description: Computes the n-th Fibonacci number iteratively as specified in
 #              Figure 1. The input 'n' is loaded from memory, and the computed
 #              result is written back to memory.
-# ==============================================================================
 
 .data
     .align 2
@@ -30,11 +28,10 @@ main:
     li      $v0, 10
     syscall
 
-# ------------------------------------------------------------------------------
 # Function: fibonacci
 # Input:    $a0 = n (nonnegative integer)
 # Output:   $v0 = n-th Fibonacci number
-# ------------------------------------------------------------------------------
+
 fibonacci:
     # Base case check: if n <= 1, return n
     li      $t2, 1
