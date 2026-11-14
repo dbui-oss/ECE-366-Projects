@@ -1,0 +1,23 @@
+# ECE 366: Computer Organization — Project 2 (Progress Report 1)
+
+## Team Information
+- **Member 1:** Martinez, Jose — NetID:672018658 
+- **Member 2:** Bui, Duong Minh Nhat — NetID: 677079682
+
+## GitHub Repository
+- **URL:** https://github.com/dbui-oss/ECE-366-Projects.git
+
+## Member Contributions
+- **Jose Martinez:** Designed the core iterative loop logic in MIPS assembly, managed the Git repository setup, and tested edge cases ($n = 0, 1$).
+- **Bui, Duong Minh Nhat** Implemented the function IsOdd following the criteria and the functions given from the pseudocode 
+
+
+## How to Run the Program in MARS
+
+1. Launch the program "Project 2 question 1B" after downloading it from GitHub using the provided repository link, then open it in MARS
+
+2. You will notice an instruction in main that says "li $a0, 8", that is the test variable for the input, feel free to change the number 8 to any number you want to test 
+
+3. Assemble the program then run it 
+
+4. To verify the result, check the register table and find register t4, which will contain result in either 0,1, with 0 means it is an even number, and 1 meaning its an odd
