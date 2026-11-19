@@ -1,4 +1,4 @@
-# ECE 366: Computer Organization — Project 2 (Progress Report 1)
+# ECE 366: Computer Organization — Project 2 (Final Report)
 
 ## Team Information
 - **Member 1:** Martinez, Jose — NetID:672018658 
