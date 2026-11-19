@@ -1,0 +1,23 @@
+# ECE 366: Computer Organization — Project 2 (Progress Report 1)
+
+## Team Information
+- **Member 1:** Martinez, Jose — NetID:672018658 
+- **Member 2:** Bui, Duong Minh Nhat — NetID: 677079682
+
+## GitHub Repository
+- **URL:** https://github.com/dbui-oss/ECE-366-Projects.git
+
+## Member Contributions
+- **Jose Martinez:** Designed the core iterative loop logic in MIPS assembly, managed the Git repository setup, and tested edge cases ($n = 0, 1$).
+- **Bui, Duong Minh Nhat** Implemented the function IsOdd following the criteria and the functions given from the pseudocode, as well as merging the 2 MIPS Programs from part a and b for the final ISFIBODD function
+
+
+## How to Run the Program in MARS
+
+1. Launch the program "FibIsOdd" after downloading it from GitHub using the provided repository link, then open it in MARS
+
+2. In the .data section, you will notice an instruction in main that says "n:word 9", with the number 9 here being the test variable for the input (This input means the index  in Fibonacci series, so a number 9 means the 9th index, which translate to the number 34), feel free to change it to any number as you wish to test the program (The highest number you can put in is 46 though because of the 32 bit integer limit)
+
+3. Assemble the program then run it 
+
+4. To verify the result, go to the Data Segment table, find address 0x10010000 at Value(+4) which is where the result is stored. It will show 2 values, either 0 or 1, with 0 meaning the Fibonacci number is an even , and 1 meaning the fibonacci number is odd 
